@@ -3,21 +3,26 @@ import './app.css';
 import {Route, Routes} from "react-router-dom";
 import HomePage from "../pages/home-page";
 import CartPage from "../pages/cart-page";
+import ShopHeader from "../shop-header/shop-header";
 
 
 const App = () => {
 
     return (
-        <Routes>
-            <Route
-                path='/'
-                element={<HomePage/>}
-                exact/>
-            <Route
-                path='/cart'
-                element={<CartPage/>}
+        <main role='main' className='container'>
+            <ShopHeader numItems={5} total={210}/>
+            <Routes>
+                <Route
+                    path='/'
+                    element={<HomePage/>}
+                    exact/>
+                <Route
+                    path='/cart'
+                    element={<CartPage/>}
                 />
-        </Routes>
+            </Routes>
+        </main>
+
     )
 };
 
