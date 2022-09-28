@@ -18,15 +18,16 @@ const ShoppingCartTable = ({items, total, onIncrease, onDecrease, onDelete}) => 
                         className="btn btn-outline-danger btn-sm float-right">
                         <i className="fa fa-trash-o"/>
                     </button>
-                    <button
-                        onClick={() => onIncrease(id)}
-                        className="btn btn-outline-success btn-sm float-right">
-                        <i className="fa fa-plus-circle"/>
-                    </button>
+
                     <button
                         onClick={() => onDecrease(id)}
                         className="btn btn-outline-warning btn-sm float-right">
                         <i className="fa fa-minus-circle"/>
+                    </button>
+                    <button
+                        onClick={() => onIncrease(id)}
+                        className="btn btn-outline-success btn-sm float-right">
+                        <i className="fa fa-plus-circle"/>
                     </button>
                 </td>
             </tr>
@@ -56,7 +57,7 @@ const ShoppingCartTable = ({items, total, onIncrease, onDecrease, onDelete}) => 
     )
 };
 
-const mapStateToProps = ({cartItems, orderTotal}) => {
+const mapStateToProps = ({shoppingCart:{cartItems, orderTotal}}) => {
     return {
         items: cartItems,
         total: orderTotal
